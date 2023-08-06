@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Sablon from './sayfalar/Sablon'
+import Anasayfa from './sayfalar/Anasayfa'
+import Ekibimiz from './sayfalar/Ekibimiz'
+import Hakkimizda from './sayfalar/Hakkimizda'
+import Iletisim from './sayfalar/Iletisim'
+import Bulunamadi from './sayfalar/Bulunamadi'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Sablon />}>
+            <Route index element={<Anasayfa />} />
+            <Route path="hakkimizda" element={<Hakkimizda />} />
+            <Route path="ekibimiz" element={<Ekibimiz />} />
+            <Route path="iletisim" element={<Iletisim />} />
+            <Route path="Bulunamadi" element={<Bulunamadi />} />
+          </Route>
+        </Routes>
+      </BrowserRouter> 
   );
 }
 
